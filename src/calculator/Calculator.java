@@ -7,8 +7,6 @@ public class Calculator {
         System.out.println("Hello, Calculator!");
         System.out.println(" ");
 
-
-//        for (int n = 0; n >= 0; n++) {
         // 숫자 입력받기
         Scanner scanner = new Scanner(System.in);
         System.out.print("첫 번째 정수를 입력해주세요(0을 포함한 양의 정수):");
@@ -35,33 +33,31 @@ public class Calculator {
         System.out.print("사칙연산 기호를 입력해주세요 (+, -, *, /)");
         String operation = scanner.next();
 
-        if (!operation.equals("+") || !operation.equals("-") || !operation.equals("*") || !operation.equals("/")) {
-            for (int i = 0; i >= 0; i++) {
-                System.out.print("입력이 올바르지 않습니다\n사칙연산 기호를 제대로 입력해주세요 (+, -, *, /)");
-                operation = scanner.next();
-                if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
-                    switch (operation) {
-                        case "+":
-                            System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 + number2));
-                            System.out.print("계산기를 종료합니다.");
-                            break;
-                        case "-":
-                            System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 - number2));
-                            System.out.print("계산기를 종료합니다.");
-                            break;
-                        case "*":
-                            System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 * number2));
-                            System.out.print("계산기를 종료합니다.");
-                            break;
-                        case "/":
-                            System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 / number2));
-                            System.out.println("나머지는 " + (number1 % number2) + "입니다.");
-                            System.out.print("계산기를 종료합니다.");
-                            break;
-                        default:
-                    }
-                    break;
+        for (int i = 0; i >= 0; i++) {
+            System.out.print("입력이 올바르지 않습니다\n사칙연산 기호를 제대로 입력해주세요 (+, -, *, /)");
+            operation = scanner.next();
+            if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
+                switch (operation) {
+                    case "+":
+                        System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 + number2));
+                        System.out.print("계산기를 종료합니다.");
+                        break;
+                    case "-":
+                        System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 - number2));
+                        System.out.print("계산기를 종료합니다.");
+                        break;
+                    case "*":
+                        System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 * number2));
+                        System.out.print("계산기를 종료합니다.");
+                        break;
+                    case "/":
+                        System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 / number2));
+                        System.out.println("나머지는 " + (number1 % number2) + "입니다.");
+                        System.out.print("계산기를 종료합니다.");
+                        break;
+                    default:
                 }
+                break;
             }
         }
     }
