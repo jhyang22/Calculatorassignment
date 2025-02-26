@@ -27,5 +27,35 @@ public class Calculator {
             System.out.println("현재 입력된 number1의 값은 " + number1 + "입니다");
             System.out.println("현재 입력된 number2의 값은 " + number2 + "입니다");
         }
+
+        // 사칙연산 기호 입력받기
+        System.out.print("사칙연산 기호를 입력해주세요 (+, -, *, /)");
+        String operation = scanner.next();
+        if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
+            switch (operation) {
+                case "+":
+                    System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 + number2));
+                    System.out.print("계산기를 종료합니다.");
+                    break;
+                case "-":
+                    System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 - number2));
+                    System.out.print("계산기를 종료합니다.");
+                    break;
+                case "*":
+                    System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 * number2));
+                    System.out.print("계산기를 종료합니다.");
+                    break;
+                case "/":
+                    System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 / number2));
+                    System.out.println("나머지는 " + (number1 % number2) + "입니다.");
+                    System.out.print("계산기를 종료합니다.");
+                    break;
+                default:
+
+            }
+        } else {
+            System.out.print("입력이 올바르지 않습니다\n사칙연산 기호를 입력해주세요 (+, -, *, /)");
+            operation = scanner.next();
+        }
     }
 }
