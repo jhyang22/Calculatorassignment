@@ -86,32 +86,3 @@ public class Calculator {
         }
     }
 }
-
-//            // 잘못 만든 코드들
-//            // 계산기 종료
-//            System.out.println("계산기를 종료하려면 'exit'을 입력하세요");
-//            String quit = scanner.next();
-//
-//            if(!quit.equals("exit")){
-//                System.out.println("계산을 계속합니다");
-//            } else {
-//                System.out.println("계산기를 종료합니다");
-//            }
-//            break;
-
-//            for (int i = 1; i > 0; i++) {
-//                if (answer.equals("y") || answer.equals("n")) {
-//                    switch (answer) {
-//                        case "y":
-//                            System.out.println("계산기를 종료합니다.");
-//                            break;
-//                        case "n":
-//                            System.out.println("계산을 계속합니다.");
-//                            break;
-//                        default:
-//                    }
-//                } else {
-//                    System.out.println("입력이 올바르지 않습니다. 계산을 계속하시겠습니까? (y/n)");
-//                    answer = scanner.next();
-//                }
-//            }
