@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.Scanner;
 
-public class CalculatorWithoutClass {
+public class AppWithoutClass {
     public static void main(String[] args) {
         System.out.println("Hello, Calculator!");
         System.out.println(" ");
