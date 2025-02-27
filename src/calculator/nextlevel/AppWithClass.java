@@ -7,36 +7,47 @@ public class AppWithClass {
         System.out.println("Hello, Calculator!");
         System.out.println(" ");
 
-        for (int i = 1; i > 0; i++) {
-            // 입력
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("첫 번째 정수를 입력해주세요 (0을 포함): ");
-            int input1 = scanner.nextInt();
-            System.out.print("두 번째 정수를 입력해주세요 (0을 포함): ");
-            int input2 = scanner.nextInt();
-            Calculator calculator = new Calculator(input1, input2);
+//        for (int i = 1; i > 0; i++) {
+//            // 입력
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.print("첫 번째 정수를 입력해주세요 (0을 포함): ");
+//            int input1 = scanner.nextInt();
+//            System.out.print("두 번째 정수를 입력해주세요 (0을 포함): ");
+//            int input2 = scanner.nextInt();
+//            Calculator calculator = new Calculator(input1, input2);
+//
+//            // 계산
+//            calculator.operator(input1, input2);
+//
+//            System.out.print("계산을 계속하시겠습니까? (y/n): ");
+//            String answer = scanner.next();
+//            for (int j = 1; j > 0; j++) {
+//                if (answer.equals("y")) {
+//                    System.out.println("계산을 계속합니다.");
+//                    break;
+//                } else if (!(answer.equals("n") || answer.equals("exit"))) {
+//                    System.out.println("잘못 입력하였습니다.\n계산을 계속하시겠습니까? (y/n): ");
+//                    answer = scanner.next();
+//                } else {
+//                    break;
+//                }
+//            }
+//            if (answer.equals("n") || answer.equals("exit")) {
+//                System.out.println("계산기를 종료합니다.");
+//                break;
+//            }
+//        }
 
-            // 계산
-            calculator.operator(input1, input2);
 
-            System.out.print("계산을 계속하시겠습니까? (y/n): ");
-            String answer = scanner.next();
-            for (int j = 1; j > 0; j++) {
-                if (answer.equals("y")) {
-                    System.out.println("계산을 계속합니다.");
-                    break;
-                } else if (!(answer.equals("n") || answer.equals("exit"))) {
-                    System.out.println("잘못 입력하였습니다.\n계산을 계속하시겠습니까? (y/n): ");
-                    answer = scanner.next();
-                } else {
-                    break;
-                }
-            }
-            if (answer.equals("n") || answer.equals("exit")) {
-                System.out.println("계산기를 종료합니다.");
-                break;
-            }
-        }
+        // 다시 짜보자잇
+//        Scanner scanner = new Scanner(System.in);
+//
+
+
+//        Calculator calculator = new Calculator();
+        Calculator.setNumber();
+//        System.out.println(Calculator.add(int number1, int number2));
+
     }
 }
 
