@@ -40,7 +40,7 @@ public class AppWithClass {
     }
 }
 
-// 연산 결과 -> Calculator 클래스의 연산 결과를 저장하는 필드에 저장
+// 연산 결과 -> Calculator 클래스의 연산 결과를 저장하는 필드에 저장 --> return을 원하는건가?
 // 소스 코드 수정 후에도 수정 전의 기능들이 반드시 똑같이 동작해야 한다
 
 // 캡슐화 - getter, setter
