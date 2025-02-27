@@ -34,8 +34,7 @@ public class Calculator {
         String operation = scanner.next();
 
         for (int i = 0; i >= 0; i++) {
-            System.out.print("입력이 올바르지 않습니다\n사칙연산 기호를 제대로 입력해주세요 (+, -, *, /)");
-            operation = scanner.next();
+
             if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
                 switch (operation) {
                     case "+":
@@ -51,13 +50,20 @@ public class Calculator {
                         System.out.print("계산기를 종료합니다.");
                         break;
                     case "/":
+                        if (number2 == 0) {
+                            System.out.println("분모는 0이 될 수 없습니다. 계산기를 종료합니다");
+                            break;
+                        } else {
                         System.out.println(number1 + " " + operation + " " + number2 + " = " + (number1 / number2));
                         System.out.println("나머지는 " + (number1 % number2) + "입니다.");
                         System.out.print("계산기를 종료합니다.");
-                        break;
+                        break;}
                     default:
                 }
                 break;
+            } else {
+                System.out.print("입력이 올바르지 않습니다\n사칙연산 기호를 제대로 입력해주세요 (+, -, *, /)");
+                operation = scanner.next();
             }
         }
     }
