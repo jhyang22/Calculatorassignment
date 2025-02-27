@@ -1,5 +1,18 @@
 package calculator.nextlevel;
 
 public class Calculator {
-asdfasdfasdf
+    // 속성
+        int operation;
+
+
+    // 생성자
+
+
+
+
+    // 기능
+
+
+
+
 }
