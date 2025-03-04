@@ -1,11 +1,14 @@
 package calculator.nextlevel;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class AppWithClass {
     public static void main(String[] args) {
         System.out.println("Hello, Calculator!");
         System.out.println(" ");
+
+        Calculator cal = new Calculator();
 
         while (true) {
             // 정수 입력
@@ -14,9 +17,6 @@ public class AppWithClass {
             int number1 = scanner.nextInt();
             System.out.print("두 번째 정수를 입력해주세요 (0을 포함): ");
             int number2 = scanner.nextInt();
-
-            Calculator cal = new Calculator();
-
 
             // 입력 정수 확인
             while (true) {
@@ -32,7 +32,6 @@ public class AppWithClass {
                     number2 = scanner.nextInt();
                 }
             }
-
             System.out.println("현재 입력된 값은 " + number1 + ", " + number2 + "입니다");
 
             // 사칙연산 기호 입력
@@ -53,7 +52,7 @@ public class AppWithClass {
 
             // 사칙연산 수행
             int result = 0;
-            int result1 = 0;
+            int modResult = 0;
             switch (sign) {
                 case "+":
                     result = cal.add(number1, number2);
@@ -78,13 +77,24 @@ public class AppWithClass {
                         }
                     }
                     result = cal.div(number1, number2);
-                    result1 = cal.mod(number1, number2);
+                    modResult = cal.mod(number1, number2);
                     System.out.println(number1 + " / " + number2 + " = " + result);
-                    System.out.println(number1 + " % " + number2 + " = " + result1);
+                    System.out.println(number1 + " % " + number2 + " = " + modResult);
                     break;
                 default:
             }
+            cal.setResult(result);
 
+            // 리스트에 저장하기
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            cal.setResultList();
+            arrayList = cal.getResultList();
+            System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
+
+            cal.removeResultList();
+            System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
+
+            // 계산기 종료
             System.out.print("계산을 계속하시겠습니까? (y/n) ");
             String answer = scanner.next();
             while (true) {

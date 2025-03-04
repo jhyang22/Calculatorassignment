@@ -1,6 +1,7 @@
 package calculator.nextlevel;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Calculator {
     // 속성
@@ -8,6 +9,8 @@ public class Calculator {
     private int number2;
     private String sign;
     private int result;
+    private int modResult;
+    private ArrayList<Integer> resultList = new ArrayList<Integer>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -35,15 +38,6 @@ public class Calculator {
     }
 
     int div(int number1, int number2) {
-//        while (true) {
-//            if (number2 == 0) {
-//                System.out.print("분모는 0이 될 수 없습니다. 다시 입력해 주세요: ");
-//                number2 = scanner.nextInt();
-//            } else {
-//                setInputNum(number1, number2);
-//                break;
-//            }
-//        }
         result = this.number1 / this.number2;
         return result;
     }
@@ -76,6 +70,28 @@ public class Calculator {
         } else {
             return false;
         }
+    }
+
+    int getResult() {
+        return result;
+    }
+
+    void setResult(int result) {
+        this.result = result;
+    }
+
+    ArrayList<Integer> setResultList() {
+        resultList.add(result);
+        return resultList;
+    }
+
+    ArrayList<Integer> getResultList() {
+        return resultList;
+    }
+
+    ArrayList<Integer> removeResultList() {
+        resultList.remove(0);
+        return resultList;
     }
 
 }
