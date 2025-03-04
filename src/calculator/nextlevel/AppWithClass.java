@@ -20,8 +20,7 @@ public class AppWithClass {
 
             // 입력 정수 확인
             while (true) {
-                cal.setInputNum(number1, number2);
-                boolean checkNum = cal.checkNum();
+                boolean checkNum = cal.checkNum(number1, number2);
                 if (checkNum) {
                     break;
                 } else {
@@ -40,8 +39,7 @@ public class AppWithClass {
 
             // 입력받은 기호 확인
             while (true) {
-                cal.setInputSign(sign);
-                boolean checkStr = cal.checkStr();
+                boolean checkStr = cal.checkStr(sign);
                 if (checkStr) {
                     break;
                 } else {
@@ -51,43 +49,12 @@ public class AppWithClass {
             }
 
             // 사칙연산 수행
-            int result = 0;
-            int modResult = 0;
-            switch (sign) {
-                case "+":
-                    result = cal.add(number1, number2);
-                    System.out.println(number1 + " + " + number2 + " = " + result);
-                    break;
-                case "-":
-                    result = cal.sub(number1, number2);
-                    System.out.println(number1 + " - " + number2 + " = " + result);
-                    break;
-                case "*":
-                    result = cal.mul(number1, number2);
-                    System.out.println(number1 + " * " + number2 + " = " + result);
-                    break;
-                case "/":
-                    while (true) {
-                        if (number2 == 0) {
-                            System.out.print("분모는 0이 될 수 없습니다. 다시 입력해 주세요: ");
-                            number2 = scanner.nextInt();
-                        } else {
-                            cal.setInputNum(number1, number2);
-                            break;
-                        }
-                    }
-                    result = cal.div(number1, number2);
-                    modResult = cal.mod(number1, number2);
-                    System.out.println(number1 + " / " + number2 + " = " + result);
-                    System.out.println(number1 + " % " + number2 + " = " + modResult);
-                    break;
-                default:
-            }
-            cal.setResult(result);
+            int result = cal.calculating(sign, number1, number2);
 
             // 리스트에 저장하기
             ArrayList<Integer> arrayList = new ArrayList<>();
-            cal.setResultList();
+
+            cal.addResultList(result);
             arrayList = cal.getResultList();
             System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
 

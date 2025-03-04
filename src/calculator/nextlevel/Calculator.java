@@ -4,55 +4,38 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Calculator {
-    // 속성
-    private int number1;
-    private int number2;
-    private String sign;
-    private int result;
-    private int modResult;
+    // 속성(멤버변수를 등록해라~)
     private ArrayList<Integer> resultList = new ArrayList<Integer>();
 
     Scanner scanner = new Scanner(System.in);
 
-    // 생성자
-    Calculator() {
-        this.number1 = number1;
-        this.number2 = number2;
-
-    }
-
     // 기능
     int add(int number1, int number2) {
-        result = this.number1 + this.number2;
+        int result = number1 + number2;
         return result;
     }
 
     int sub(int number1, int number2) {
-        result = this.number1 - this.number2;
+        int result = number1 - number2;
         return result;
     }
 
     int mul(int number1, int number2) {
-        result = this.number1 * this.number2;
+        int result = number1 * number2;
         return result;
     }
 
     int div(int number1, int number2) {
-        result = this.number1 / this.number2;
+        int result = number1 / number2;
         return result;
     }
 
     int mod(int number1, int number2) {
-        result = this.number1 % this.number2;
+        int result = number1 % number2;
         return result;
     }
 
-    void setInputNum(int number1, int number2) {
-        this.number1 = number1;
-        this.number2 = number2;
-    }
-
-    boolean checkNum() {
+    boolean checkNum(int number1, int number2) {
         if (number1 >= 0 && number2 >= 0) {
             return true;
         } else {
@@ -60,11 +43,7 @@ public class Calculator {
         }
     }
 
-    void setInputSign(String sign) {
-        this.sign = sign;
-    }
-
-    boolean checkStr() {
+    boolean checkStr(String sign) {
         if (sign.equals("+") || sign.equals("-") || sign.equals("*") || sign.equals("/")) {
             return true;
         } else {
@@ -72,17 +51,8 @@ public class Calculator {
         }
     }
 
-    int getResult() {
-        return result;
-    }
-
-    void setResult(int result) {
-        this.result = result;
-    }
-
-    ArrayList<Integer> setResultList() {
+    void addResultList(int result) {
         resultList.add(result);
-        return resultList;
     }
 
     ArrayList<Integer> getResultList() {
@@ -94,4 +64,37 @@ public class Calculator {
         return resultList;
     }
 
+    int calculating(String sign, int number1, int number2) {
+        int result = 0;
+        switch (sign) {
+            case "+":
+                result = add(number1, number2);
+                System.out.println(number1 + " + " + number2 + " = " + result);
+                break;
+            case "-":
+                result = sub(number1, number2);
+                System.out.println(number1 + " - " + number2 + " = " + result);
+                break;
+            case "*":
+                result = mul(number1, number2);
+                System.out.println(number1 + " * " + number2 + " = " + result);
+                break;
+            case "/":
+                while (true) {
+                    if (number2 == 0) {
+                        System.out.print("분모는 0이 될 수 없습니다. 다시 입력해 주세요: ");
+                        number2 = scanner.nextInt();
+                    } else {
+                        break;
+                    }
+                }
+                result = div(number1, number2);
+                int modResult = mod(number1, number2);
+                System.out.println(number1 + " / " + number2 + " = " + result);
+                System.out.println(number1 + " % " + number2 + " = " + modResult);
+                break;
+            default:
+        }
+        return result;
+    }
 }
