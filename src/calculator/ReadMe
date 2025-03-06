@@ -8,4 +8,4 @@
   + 나눗셈의 경우 분모자리(number2)에 0이 입력될 경우 문구를 출력하고 사칙연산을 종료합니다.
   + answer는 계산 종료 문구를 의미합니다. y, n, exit이 가능합니다
   + number1, 2를 제외하곤 모두 잘못 입력하였을 경우 재입력이 가능합니다.
-+ lv 2는 nextlevel 패키지, lv 3는 upperlevel 패키지에 있습니다.
++ lv 2는 nextlevel 패키지에, lv 3는 upperlevel 패키지에 있습니다.
