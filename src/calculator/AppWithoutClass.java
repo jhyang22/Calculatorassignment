@@ -21,9 +21,9 @@ public class AppWithoutClass {
                 for (int i = 1; i > 0; i++) {
                     if (number1 < 0 || number2 < 0) {
                         System.out.println("0을 포함한 양의 정수를 입력해주세요");
-                        System.out.print("첫 번째 정수를 입력해주세요(0을 포함한 양의 정수):");
+                        System.out.print("첫 번째 정수를 입력해주세요(0을 포함한 양의 정수): ");
                         number1 = scanner.nextInt();
-                        System.out.print("두 번째 정수를 입력해주세요(0을 포함한 양의 정수):");
+                        System.out.print("두 번째 정수를 입력해주세요(0을 포함한 양의 정수): ");
                         number2 = scanner.nextInt();
                     }
                 }
