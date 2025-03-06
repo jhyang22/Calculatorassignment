@@ -32,7 +32,7 @@ public class AppUpper {
                 }
             }
 
-            // 사칙연산 기호 입력 - enum 활용...
+            // 사칙연산 기호 입력 - enum 활용...(해결 못함)
             System.out.print("사칙연산 기호를 입력해주세요 (+, -, *, /): ");
             String sign = scanner.next();
 
@@ -65,11 +65,12 @@ public class AppUpper {
             // 내가 입력한 값 < 기존 결과
             // a가 현재 결과
             // b가 저장된 결과?
-
             List<Double> comResult = arrayList.stream()
                     .filter(b -> result < b)
                     .collect(Collectors.toList());
             System.out.println("comResult = " + comResult);
+
+
 
 
             // 계산기 종료

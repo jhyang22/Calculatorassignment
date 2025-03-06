@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArithmeticCalculator<T> {
-    // 속성(멤버변수를 등록해라~)
+    // 속성
     private ArrayList<T> resultList = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
