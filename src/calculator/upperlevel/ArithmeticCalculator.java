@@ -46,8 +46,8 @@ public class ArithmeticCalculator<T> {
         return resultList;
     }
 
-    ArrayList<T> removeResultList() {
-        resultList.remove(0);
+    ArrayList<T> removeResultList(int number3) {
+        resultList.remove(number3);
         return resultList;
     }
 

@@ -47,31 +47,45 @@ public class AppUpper {
                 }
             }
 
-            // 사칙연산 수행 - 제네릭 사용
+            // 사칙연산 수행 - 제네릭 사용 (해결 못함)
             double result = cal.calculate(sign, number1, number2);
 
-
-            // 리스트에 저장하기
+            // 리스트에 저장
             ArrayList<Double> arrayList = new ArrayList<>();
-
             cal.addResultList(result);
             arrayList = cal.getResultList();
             System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
 
-//        cal.removeResultList();
-//        System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
-
             // 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값들을 출력 - 람다, 스트림 활용
-            // 내가 입력한 값 < 기존 결과
-            // a가 현재 결과
-            // b가 저장된 결과?
             List<Double> comResult = arrayList.stream()
                     .filter(b -> result < b)
                     .collect(Collectors.toList());
-            System.out.println("comResult = " + comResult);
+            System.out.println("현재 결과는 " + result + "이고 " + result + "보다 큰 저장된 결과값들은 " + comResult + "입니다.");
 
-
-
+            // 리스트 삭제
+            System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
+            System.out.print("인덱스를 삭제하시겠습니까? (y/n): ");
+            String indexAnswer = scanner.next();
+            while (true) {
+                if (indexAnswer.equals("y")) {
+                    try {
+                        System.out.println("현재 저장된 리스트는 = " + arrayList + "입니다.");
+                        System.out.print("삭제할 인덱스를 선택하세요 (최대 입력 가능한 수 : " + (arrayList.toArray().length - 1) + "): ");
+                        int number3 = scanner.nextInt();
+                        cal.removeResultList(number3);
+                        System.out.println("삭제 후 현재 저장된 리스트는 = " + arrayList + "입니다.");
+                        break;
+                    } catch (RuntimeException e) {
+                        System.out.println("숫자를 제대로 입력하지 않았습니다!\n다시 입력해주세요!");
+                        scanner.nextLine();
+                    }
+                } else if (indexAnswer.equals("n")) {
+                    break;
+                } else {
+                    System.out.print("입력이 올바르지 않습니다. 다시 입력해주세요. (y/n) ");
+                    indexAnswer = scanner.next();
+                }
+            }
 
             // 계산기 종료
             System.out.print("계산을 계속하시겠습니까? (y/n) ");
